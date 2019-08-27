@@ -56,4 +56,13 @@ public class Order implements Serializable{
 		this.amount = amount;
 	}
 	
+	@Column(name="Customer_Name", nullable=false)
+	public String getCustomerName() {
+		return customerName;
+	}
+	
+	public void setCustomerName(String customerName) {
+		this.customerName = customerName;
+	}
+	
 }
