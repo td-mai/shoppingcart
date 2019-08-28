@@ -65,4 +65,29 @@ public class Order implements Serializable{
 		this.customerName = customerName;
 	}
 	
+	@Column(name="Customer_Address", nullable=false)
+	public String getCustomerAddress() {
+		return customerAddress;
+	}
+	
+	public void setCustomerAddress(String customerAddress) {
+		this.customerAddress = customerAddress;
+	}
+	
+	@Column(name="Customer_Phone", length=128, nullable=true)
+	public String getCustomerPhone() {
+		return customerPhone;
+	}
+	public void setCustomerPhone(String customerPhone) {
+		this.customerPhone = customerPhone;
+	}
+	
+	@Column(name="Customer_Email", length=128, nullable=true)
+	public String getCustomerEmail() {
+		return customerEmail;
+	}
+	public void setCustomerEmail(String customerEmail) {
+		this.customerEmail = customerEmail; 
+	}
+	
 }
