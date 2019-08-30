@@ -24,6 +24,11 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 import org.springframework.web.multipart.commons.CommonsMultipartResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import dao.AccountDAO;
+import dao.ProductDAO;
+import dao.impl.AccountDAOImpl;
+import dao.impl.ProductDAOImpl;
+
 @Configuration
 @EnableTransactionManagement
 // Load to Environment.
@@ -61,7 +66,21 @@ public class ApplicationContextConfig {
 		return commonsMultipartResolver;
 	}
 	
-	@Bean(name="DataSource")
+	@Bean(name="dataSource")
+	public DataSource getDataSource() {
+		DriverManagerDataSource dataSource = new DriverManagerDataSource();
+		//see ds-hibernate-cfg.properties
+		dataSource.setDriverClassName(env.getProperty("ds-database-driver"));
+		dataSource.setUrl("ds.url");
+		dataSource.setUsername(env.getProperty("ds.username"));
+		dataSource.setPassword(env.getProperty("ds.password"));
+		
+		System.out.println("## get data Source: "+ dataSource);
+		return dataSource;
+	}
+	
+	@Autowired
+	@Bean(name="sessionFactory")
 	public SessionFactory getSessionFactory(DataSource dataSource) throws Exception{
 		Properties properties = new Properties();
 		
@@ -91,10 +110,15 @@ public class ApplicationContextConfig {
 		return transactionManager;
 	}
 	
+	@Bean(name="accountDAO")
+	public AccountDAO getAccountDAO() {
+		return new AccountDAOImpl();
+	}
 	
-	
-	
-	
+	@Bean(name="productDAO")
+	public ProductDAO getProductDAO() {
+		return new ProductDAOImpl();
+	}
 	
 	
 }

@@ -1,0 +1,8 @@
+127.0.0.1 - - [30/Aug/2019:11:18:22 +0200] "GET / HTTP/1.1" 404 - http-bio-8080-exec-1 0
+127.0.0.1 - - [30/Aug/2019:11:18:22 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-2 0
+127.0.0.1 - - [30/Aug/2019:11:19:00 +0200] "GET /SpringMVCShoppingCart HTTP/1.1" 404 - http-bio-8080-exec-3 0
+127.0.0.1 - - [30/Aug/2019:11:19:00 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
+127.0.0.1 - - [30/Aug/2019:11:19:05 +0200] "GET /SpringMVCShoppingCart HTTP/1.1" 404 - http-bio-8080-exec-6 0
+127.0.0.1 - - [30/Aug/2019:11:19:05 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-7 0
+127.0.0.1 - - [30/Aug/2019:11:20:57 +0200] "GET /SpringMVCShoppingCart HTTP/1.1" 404 - http-bio-8080-exec-1 0
+127.0.0.1 - - [30/Aug/2019:11:20:57 +0200] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-2 0
