@@ -30,6 +30,7 @@ import dao.impl.AccountDAOImpl;
 import dao.impl.ProductDAOImpl;
 
 @Configuration
+@ComponentScan("*")
 @EnableTransactionManagement
 // Load to Environment.
 @PropertySource("classpath:ds-hibernate-cfg.properties")
@@ -108,6 +109,11 @@ public class ApplicationContextConfig {
 	public HibernateTransactionManager getTransactionManager(SessionFactory sessionFactory) {
 		HibernateTransactionManager transactionManager = new HibernateTransactionManager(sessionFactory);
 		return transactionManager;
+	}
+	
+	@Bean(name="accountDAO")
+	public AccountDAO getApplicantDAO() {
+		return new AccountDAOImpl();
 	}
 	
 	@Bean(name="accountDAO")
